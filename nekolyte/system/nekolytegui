@@ -1,0 +1,86 @@
+-- NekolyteOS
+-- created by starstruck.
+
+NekoLyteRoot = "/nekolyte/"
+NekoLyteHome = "/nekolyte/home/"
+NekoLyteVer = "a0.7"
+NekoLyteBuild = "054"
+bcol = colors.white
+wallpaper = paintutils.loadImage("/nekolyte/system/nekolytebkg")
+term.setBackgroundColor(bcol)
+term.clear()
+
+term.setCursorPos(1,1)
+
+
+function menubar()
+term.setCursorPos(1,1)
+term.setBackgroundColor(colors.gray)
+term.setTextColor(colors.white)
+print("   [@]                                              ")
+end
+
+function main()
+term.setBackgroundColor(bcol)
+term.clear()
+paintutils.drawImage(wallpaper,1,1)
+menubar()
+end
+
+
+function nekomenu()
+term.clear()
+term.setCursorPos(6,5)
+term.setBackgroundColor(colors.gray)
+print("NEKOMENU					")
+term.setCursorPos(6,6)
+term.setBackgroundColor(colors.gray)
+print("PicView		    ")
+term.setCursorPos(6,7)
+term.setBackgroundColor(colors.gray)
+print("Ink   		    	")
+term.setCursorPos(6,8)
+term.setBackgroundColor(colors.gray)
+print("nPaintPro				")
+term.setCursorPos(6,9)
+term.setBackgroundColor(colors.gray)
+print("Shutdown					")
+term.setCursorPos(6,10)
+term.setBackgroundColor(colors.gray)
+print("Reboot       ")
+
+end
+main()
+
+while true do
+local event, button, X, Y = os.pullEventRaw()
+if event == "mouse_click" then
+if X >=4 and X<=6 and Y==1 and button ==1 then
+nekomenu()
+slc = 1
+elseif slc == 1 then
+if X >=6 and X <=11 and button == 1 and Y== 6 then slc = 0
+shell.run("nekolyte/programs/picview")
+main()
+elseif X>=6 and X<=11 and Y==7 and button ==1 then slc = 0
+shell.run("nekolyte/programs/Ink")
+main()
+elseif X>=6 and X<=11 and Y==8 and button ==1 then slc = 0
+
+shell.run("nekolyte/programs/npaintpro")
+main()
+elseif X>=6 and X<=11 and Y==9 and button ==1 then slc = 0
+os.shutdown()
+
+elseif X>=6 and X<=11 and Y==10 and button ==1 then slc = 0
+os.reboot()
+
+else
+  
+  
+slc = 0
+main()
+end
+end
+end
+end
