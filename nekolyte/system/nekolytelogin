@@ -1,6 +1,6 @@
 -- NekolyteOS
 -- created by starstruck.
-
+os.pullEvent = os.pullEventRaw()
 NekoLyteRoot = "/nekolyte/"
 NekoLyteHome = "/nekolyte/home/"
 NekoLyteVer = "a0.7"
