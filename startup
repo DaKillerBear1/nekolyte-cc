@@ -1,0 +1,5 @@
+if fs.exists("nekolyte/.fts") then
+shell.run("nekolyte/.firsttime")
+else
+shell.run("nekolyte/system/nekolytelogin")
+end
