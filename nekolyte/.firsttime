@@ -1,0 +1,31 @@
+term.clear()
+term.setCursorPos(1,1)
+print("Nekolyte First Time Setup")
+write("Username > ")
+local ftsun = read()
+if ftsun == nil then
+print("Please enter a username...")
+sleep(3)
+os.reboot()
+else
+un = fs.open("/nekolyte/home/users/..ftsun,"w")
+un.writeLine("username")
+un.close()
+write("Password > ")
+local ftspw = read("*")
+if ftspw == nil then
+print("Please enter a password...")
+sleep(3)
+os.reboot()
+else
+pw = fs.open("/nekolyte/home/passwords/..ftspw,"w")
+pw.writeLine("password")
+pw.close()
+print("You should be good to go!")
+print("Rebooting in 3 seconds")
+sleep(3)
+fs.delete("/nekolyte/.fts")
+os.reboot()
+end
+end
+
