@@ -38,8 +38,7 @@ local pw = read("*")
 if fs.exists("nekolyte/home/passwords/"..pw) then
 term.setCursorPos(17,13)
 term.setBackgroundColor(colors.black)
-print("Correct Username and Password, logging you in now...")
-break
+shell.run("/nekolyte/system/nekolytegui")
 else
 term.setCursorPos(17,13)
 term.setBackgroundColor(colors.black)
