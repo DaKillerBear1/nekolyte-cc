@@ -19,7 +19,7 @@ print("Please enter a password...")
 sleep(3)
 os.reboot()
 else
-pw = fs.open("/nekolyte/home/passwords/..ftspw,"w")
+pw = fs.open("/nekolyte/home/passwords/..ftspw","w")
 pw.writeLine("password")
 pw.close()
 print("You should be good to go!")
