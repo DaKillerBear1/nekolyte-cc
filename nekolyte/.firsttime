@@ -9,7 +9,7 @@ print("Please enter a username...")
 sleep(3)
 os.reboot()
 else
-un = fs.open("/nekolyte/home/users/..ftsun,"w")
+un = fs.open("/nekolyte/home/users/..ftsun","w")
 un.writeLine("username")
 un.close()
 write("Password > ")
