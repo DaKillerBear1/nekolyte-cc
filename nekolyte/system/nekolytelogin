@@ -30,11 +30,24 @@ term.setCursorPos(17,7)
 term.setBackgroundColor(colors.gray)
 write("")
 local un = read()
+
+if #un == 0 then
+term.setCursorPos(17,13)
+term.setBackgroundColor(colors.black)
+print("Incorrect Username")
+sleep(3)
+else
 if fs.exists("nekolyte/home/users/"..un) then
 term.setCursorPos(17,9)
 term.setBackgroundColor(colors.gray)
 write("")
 local pw = read("*")
+if #pw == 0 then
+term.setCursorPos(17,13)
+term.setBackgroundColor(colors.black)
+print("Incorrect Password.")
+sleep(3)
+else
 if fs.exists("nekolyte/home/passwords/"..pw) then
 term.setCursorPos(17,13)
 term.setBackgroundColor(colors.black)
@@ -45,10 +58,12 @@ term.setBackgroundColor(colors.black)
 print("Incorrect Password.")
 sleep(3)
 end
+end
 else
 term.setCursorPos(17,13)
 term.setBackgroundColor(colors.black)
 print("Incorrect Username")
 sleep(3)
+end
 end
 end
