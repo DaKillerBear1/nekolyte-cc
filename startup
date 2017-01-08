@@ -1,5 +1,66 @@
-if fs.exists("nekolyte/.fts") then
+term.clear()
+term.setCursorPos(1,1)
+print("Boot options (CASE SENSITIVE!): CraftOS, normalboot")
+write("BOOT OPTION [enter=normalboot]: ")
+local bopt = read()
+if #bopt == 0 then
+print("Nekocheck")
+print("Checking free space..")
+chkfreesp = fs.getFreeSpace("/")
+print("Free space: "..chkfreesp)
+print("Checking for nekolyte folder..")
+if fs.exists("/nekolyte") then
+print("Nekolyte Folder Found")
+print("Checking for core system files...")
+if fs.exists("/nekolyte/system/nekolytegui") then
+print("1 out of 4 found")
+if fs.exists("/nekolyte/system/nekolytelogin") then
+print("2 out of 4 found")
+if fs.exists("/nekolyte/system/nkltloginp") then
+print("3 out of 4 found")
+if fs.exists("/nekolyte/system/nekolytebkg") then
+print("4 out of 4 found")
+print("Booting system..")
+sleep(3)
+end
+end
+end
+end
+end
+if fs.exists("nekolyte/.fts") then 
 shell.run("nekolyte/.firsttime")
 else
 shell.run("nekolyte/system/nekolytelogin")
+end
+elseif bopt == "normalboot" then
+print("Nekocheck")
+print("Checking free space..")
+chkfreesp = fs.getFreeSpace("/")
+print("Free space: "..chkfreesp)
+print("Checking for nekolyte folder..")
+if fs.exists("/nekolyte") then
+print("Nekolyte Folder Found")
+print("Checking for core system files...")
+if fs.exists("/nekolyte/system/nekolytegui") then
+print("1 out of 4 found")
+if fs.exists("/nekolyte/system/nekolytelogin") then
+print("2 out of 4 found")
+if fs.exists("/nekolyte/system/nkltloginp") then
+print("3 out of 4 found")
+if fs.exists("/nekolyte/system/nekolytebkg") then
+print("4 out of 4 found")
+print("Booting system..")
+sleep(3)
+end
+end
+end
+end
+end
+if fs.exists("nekolyte/.fts") then 
+shell.run("nekolyte/.firsttime")
+else
+shell.run("nekolyte/system/nekolytelogin")
+end
+elseif bopt == "CraftOS" then
+
 end
