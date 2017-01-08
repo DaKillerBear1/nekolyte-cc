@@ -3,7 +3,7 @@
 
 NekoLyteRoot = "/nekolyte/"
 NekoLyteHome = "/nekolyte/home/"
-NekoLyteVer = "a0.7"
+NekoLyteVer = "a1.3"
 NekoLyteBuild = "054"
 bcol = colors.white
 wallpaper = paintutils.loadImage("/nekolyte/system/nekolytebkg")
