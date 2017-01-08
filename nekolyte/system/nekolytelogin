@@ -3,7 +3,7 @@
 os.pullEvent = os.pullEventRaw
 NekoLyteRoot = "/nekolyte/"
 NekoLyteHome = "/nekolyte/home/"
-NekoLyteVer = "a0.7"
+NekoLyteVer = "a1.3"
 NekoLyteBuild = "054"
 nekolyteloginp = paintutils.loadImage("nekolyte/system/nkltloginp")
 
