@@ -9,16 +9,17 @@ nekolyteloginp = paintutils.loadImage("nekolyte/system/nkltloginp")
 
 
 
-function clear(resetpos)
-if resetpos == y then
-term.clear()
-term.setCursorPos(1,1)
-elseif resetpos == n then
-term.clear()
-end
+function clear(resetpos) -- Make 'resetpos' a simple boolean
+  resetpos = resetpos or false -- Makes resetpos default to 'false' so as to not get nil (altough it would still work)
+  if resetpos then
+    term.clear()
+    term.setCursorPos(1,1)
+  else
+    term.clear()
+  end
 end
 while true do
-clear(y)
+clear(true)
 paintutils.drawImage(nekolyteloginp,1,1)
 term.setCursorPos(17,6)
 term.setBackgroundColor(colors.lightBlue)
